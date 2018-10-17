@@ -1,0 +1,29 @@
+{
+  "name": "pdf-to-text-http",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tpresthus/pdf-to-text-http.git"
+  },
+  "keywords": [
+    "pdftotext",
+    "http",
+    "rest",
+    "api"
+  ],
+  "author": "Thomas Presthus <thomas@erus.net>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tpresthus/pdf-to-text-http/issues"
+  },
+  "homepage": "https://github.com/tpresthus/pdf-to-text-http#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
