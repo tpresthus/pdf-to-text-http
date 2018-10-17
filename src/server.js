@@ -4,12 +4,20 @@ var express = require('express'),
 
 // GET /?pdf=uri
 app.get('/', (req, res) => {
-  res.status(200).send("ok");
+  if(req.query.pdf === '' || req.query.pdf == undefined) {
+    res.status(400).send("Missing query parameter `pdf`");
+  } else {
+    res.status(200).send("ok");
+  }
 });
 
 // POST /
 app.post('/', (req, res) => {
-  res.status(200).send("ok");
+  if(!req.is('application/pdf')) {
+    res.status(415).send("Unsupported content-type: " + req.get('content-type'));
+  } else {
+    res.status(200).send("ok");
+  }
 });
 
 app.listen(port, () => {
