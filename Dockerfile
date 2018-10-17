@@ -1,7 +1,15 @@
-FROM alpine:3.4
+FROM node:8-alpine
 
 RUN apk add --no-cache poppler-utils
 
-ENTRYPOINT ["/usr/bin/pdftotext"]
+WORKDIR /usr/src/app
 
-#CMD ["-", "-"]
+COPY src/package*.json ./
+RUN npm install --only=production
+
+COPY src/ .
+
+EXPOSE 3000
+#ENTRYPOINT ["/usr/bin/pdftotext"]
+
+CMD [ "npm", "start" ]
