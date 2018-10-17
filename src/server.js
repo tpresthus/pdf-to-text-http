@@ -2,6 +2,17 @@ var express = require('express'),
   app = express(),
   port = process.env.PORT || 3000;
 
-app.listen(port);
+// GET /?pdf=uri
+app.get('/', (req, res) => {
+  res.status(200).send("ok");
+});
 
-console.log('pdf-to-text-http started on: ' + port);
+// POST /
+app.post('/', (req, res) => {
+  res.status(200).send("ok");
+});
+
+app.listen(port, () => {
+  console.log(`server running on port ${port}`);
+});
+
